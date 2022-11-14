@@ -1,5 +1,4 @@
 ifcopenshell-python
-lark
 pandas
 Pillow
 streamlit
