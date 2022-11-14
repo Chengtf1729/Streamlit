@@ -103,17 +103,6 @@ def save_csv(filename):
 
     # Export to excel
 
-    UPLOAD_XLSX = "./assets/project.xlsx"
-
-    writer = pd.ExcelWriter(UPLOAD_XLSX, engine='xlsxwriter')
-
-    for object_class in df["Class"].unique():
-        df_class = df[df['Class'] == object_class]
-        df_class = df_class.dropna(axis=1, how='all')
-        df_class.to_excel(writer, sheet_name=object_class)
-
-    writer.save()
-
     st.write("Saving CSV and Excel completed")
     st.balloons()
 
