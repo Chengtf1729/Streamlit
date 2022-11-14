@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import ifcopenshell
 import ifcopenshell.util.element as Element
-from ifcopenshell.util.selector import Selector
 import pandas as pd
 
 UPLOAD_DIR = "./assets"
