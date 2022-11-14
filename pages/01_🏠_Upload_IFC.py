@@ -7,7 +7,7 @@ import pandas as pd
 
 st.write("Upload IFC Model")
 
-UPLOAD_DIR = "/project/app_uploaded_files"
+UPLOAD_DIR = "C:/project/app_uploaded_files"
 
 if not os.path.exists(UPLOAD_DIR):
         os.makedirs(UPLOAD_DIR)
@@ -101,13 +101,13 @@ def save_csv(filename):
 
 
     # save to csv file
-    UPLOAD_CSV = "/project/app_uploaded_files/project.csv"
+    UPLOAD_CSV = "C:/project/app_uploaded_files/project.csv"
     
     df.to_csv(UPLOAD_CSV)
 
     # Export to excel
 
-    UPLOAD_XLSX = "/project/app_uploaded_files/project.xlsx"
+    UPLOAD_XLSX = "C:/project/app_uploaded_files/project.xlsx"
 
     writer = pd.ExcelWriter(UPLOAD_XLSX, engine='xlsxwriter')
 
