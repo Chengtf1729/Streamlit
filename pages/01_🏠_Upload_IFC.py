@@ -2,22 +2,27 @@ import streamlit as st
 import os
 import ifcopenshell
 import ifcopenshell.util.element as Element
-import pandas as pd
+from ifcopenshell.util.selector import Selector
 
+UPLOAD_DIR = "c:/project/app_uploaded_files"
 
-st.write("Upload IFC Model")
+def save_uploaded_file(uploaded_file):
+    with open(os.path.join(UPLOAD_DIR, uploaded_file.name), "wb") as f:
+        f.write(uploaded_file.getbuffer())
+    return st.success("Save file :{} in tempDir".format(uploaded_file.name))
 
+if 'data' not in st.session_state:
+    st.session_state['data'] = ""
 
-filename = st.text_input('Enter a file path:')
-try:
-    with open(filename) as input:
-#        st.text(input.read())
+datafile = st.file_uploader("Upload IFC", type=['ifc'])
+if datafile is not None:
+    file_details = {"FileName":datafile.name, "FileType":datafile.type}
+    save_uploaded_file(datafile)
 
-        ifc_file = ifcopenshell.open(filename)
+    UPLOAD_IFC = UPLOAD_DIR + "/" + datafile.name
 
-        entity = ifc_file.by_type('IfcSite')
+    if 'data' in st.session_state:
+        ifc_file = ifcopenshell.open(UPLOAD_IFC)
+        st.session_state['data'] = ifc_file
 
-        st.write(entity)
-
-except FileNotFoundError:
-    st.error('File not found.')
+    st.write(datafile.name)
