@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import ifcopenshell
 import ifcopenshell.util.element as Element
-from ifcopenshell.util.selector import Selector
+
 
 UPLOAD_DIR = "c:/project/app_uploaded_files"
 
