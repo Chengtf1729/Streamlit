@@ -2,4 +2,4 @@ ifcopenshell
 pandas
 Pillow
 streamlit
-XlsWriter
+XlsWriter==3.0.3
