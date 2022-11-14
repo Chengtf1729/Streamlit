@@ -4,7 +4,7 @@ import ifcopenshell
 import ifcopenshell.util.element as Element
 
 
-UPLOAD_DIR = "c:/project/app_uploaded_files"
+UPLOAD_DIR = "./assets"
 
 def save_uploaded_file(uploaded_file):
     with open(os.path.join(UPLOAD_DIR, uploaded_file.name), "wb") as f:
