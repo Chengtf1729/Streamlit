@@ -31,6 +31,6 @@ if datafile is not None:
         ifc_file = ifcopenshell.open(UPLOAD_IFC)
         st.session_state['data'] = ifc_file
 
-        save_csv(UPLOAD_IFC)
+        
 
     st.write(datafile.name)
