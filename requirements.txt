@@ -1,4 +1,4 @@
-ifcopenshell-python==0.7.0
+ifcopenshell
 pandas
 Pillow
 streamlit
