@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-import lark
 import ifcopenshell
 import ifcopenshell.util.element as Element
 import pandas as pd
